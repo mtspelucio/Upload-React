@@ -5,7 +5,7 @@ import IconCloud from '../../assets/image/CloudArrowUp.png'
 
 
 
-export default function Upload() {
+export default function Upload({ onUpload }) {
 
   const renderDragMessage = (isDragActive, isDragReject) => {
     if(!isDragActive){
@@ -19,7 +19,7 @@ export default function Upload() {
   }
 
   return (
-    <Dropzone accept={"image/*"} onDropAccepted={() => {}}>
+    <Dropzone accept={"image/*"} onDropAccepted={onUpload}>
       {
         ({ getRootProps, getInputProps, isDragActive, isDragReject}) => (
           <DropContainer 
@@ -29,7 +29,7 @@ export default function Upload() {
           >
             <input {...getInputProps()} />
 
-
+            {/* {console.log(isDragReject)} */}
             <img src={IconCloud} alt="Icone upload" />
             <strong>Importe seus arquivos</strong>
             {renderDragMessage(isDragActive, isDragReject)}
@@ -37,13 +37,5 @@ export default function Upload() {
         )
       }
     </Dropzone>
-    // <Container>
-    //     <label className='flex' htmlFor='file' >
-    //         <img src={IconCloud} alt="Icone upload" />
-    //         <strong>Importe seus arquivos</strong>
-    //         <p>Arraste ou clique para fazer upload</p>
-    //     </label>
-    //     <input id="file" type="file" />
-    // </Container>
   );
 }
