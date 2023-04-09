@@ -32,7 +32,7 @@ export default function File({ files }) {
 
         uploadTask.on("state_changed", snapshot => {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-            setProgress(progress)
+            console.log(progress)
         },
         error => {
             alert(error)
@@ -66,6 +66,8 @@ export default function File({ files }) {
                         <p className="percentage">{progress}</p>
                     </div>
                 )}
+                {!imgURL && <progress value={progress} max="100" />}
+                {imgURL && <img src={imgURL} alt='imagem' />}
             </div>            
         </Container>
     ))}
