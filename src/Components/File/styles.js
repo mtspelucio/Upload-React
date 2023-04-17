@@ -30,6 +30,7 @@ export const Container = styled.section`
     }
 
     .info-and-close .close{
+        width: 12rem;
         padding: .7rem;
         align-items: first baseline;
         cursor: pointer;

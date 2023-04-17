@@ -11,7 +11,7 @@ import Close from '../../assets/image/Close.png'
 export default function File({ files }) {
     const [imgURL, setImgURL] = useState("");
     const [progress, setProgress] = useState(0);
-
+    console.log(imgURL)
 
     const handleIcon = uploadedFile => {
         if(uploadedFile.uploaded) {

@@ -22,8 +22,6 @@ export default function Home() {
     }))
 
     setUploadFiles(upload);
-
-
   }
 
   return (
