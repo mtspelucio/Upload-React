@@ -11,6 +11,13 @@ export const Container = styled.section`
         scale: 1.1;
     }
 
+    .imgModel{
+        max-width:6rem;
+        max-height:6rem;
+        width: auto;
+        height: auto;
+    }
+
     .info{
         width: 100%;
         flex-direction: column;
@@ -30,7 +37,6 @@ export const Container = styled.section`
     }
 
     .info-and-close .close{
-        width: 12rem;
         padding: .7rem;
         align-items: first baseline;
         cursor: pointer;
@@ -41,28 +47,24 @@ export const Container = styled.section`
         justify-content: space-between;
     }
 
-    .loading-bar{
-        width: calc(100% - 3.4rem);
-        height: .8rem;
-    }
-    .loading-bar::before{
-        content: '';
-        width: 100%;
-        height: .8rem;
-        background: var(--gray-5);
-        display: block;
-        border-radius: 10rem;
-    }
+    progress::-webkit-progress-value {
+        background-image:
+            -webkit-linear-gradient(-45deg, transparent 100%, rgba(0, 0, 0, .1) 33%, rgba(0,0, 0, .1) 66%, transparent 66%),
 
-    .loading-bar::after{
-        content: '';
-        position: relative;
-        top: -.8rem;
-        width: 50%;
-        height: .8rem;
-        background: linear-gradient( to right,  var(--gradient-1), var(--gradient-2));
-        display: block;
-        border-radius: 10rem;
+            -webkit-linear-gradient(left, var(--gradient-1), var(--gradient-2));
+
+        border-radius: 10px; 
+        background-size: 35px 20px, 100% 100%, 100% 100%;
+    }
+    progress::-webkit-progress-bar {
+        background: var(--gray-5);
+        border-radius: 10px; 
+    }
+    progress[value]{
+        width: calc(100% - 3.4rem);
+
+        height: 1rem;
+        background-color: transparent;
     }
 
     .percentage{
@@ -91,4 +93,5 @@ export const Container = styled.section`
         font-size: 1.2rem;
         color: var(--red);
     }
+
 `;

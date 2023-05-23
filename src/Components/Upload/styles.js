@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const dragActive = css`
-    border-color: var(--green-2);
+    background: #EBE5FF;
 `;
 const dragReject = css`
     border-color: #E57878;

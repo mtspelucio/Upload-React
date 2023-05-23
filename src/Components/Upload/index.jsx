@@ -19,7 +19,7 @@ export default function Upload({ onUpload }) {
   }
 
   return (
-    <Dropzone accept={"image/*"} onDropAccepted={onUpload}>
+    <Dropzone onDropAccepted={onUpload}>
       {
         ({ getRootProps, getInputProps, isDragActive, isDragReject}) => (
           <DropContainer 
